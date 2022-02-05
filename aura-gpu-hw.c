@@ -160,6 +160,7 @@ static void mm_write (
 #define HW_I2C_READ                     0
 #define HW_ASSISTED_I2C_STATUS_FAILURE  2
 #define HW_ASSISTED_I2C_STATUS_SUCCESS  1
+#define UC_LINE_NUMBER			7
 
 struct transaction_parameters {
     uint8_t     ucI2CSpeed;
@@ -201,7 +202,7 @@ static error_t aura_gpu_i2c_process_i2c_ch(
     args.ucTransBytes = 1;
     args.ucSlaveAddr = slave_addr << 1;
     args.ucRegIndex = offset;
-    args.ucLineNumber = 6;
+    args.ucLineNumber = UC_LINE_NUMBER;
 
     AURA_DBG("Pre Transaction: addr = %x, offset = %x, rw = %s, count = %d, out = %x",
         args.ucSlaveAddr >> 1,
