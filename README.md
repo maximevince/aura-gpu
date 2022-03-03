@@ -27,9 +27,8 @@ cd aura-gpu
 ```
 Then run:
 ```
-make install
+sudo make dkms
 ```
-The installer will prompt for your sudo password in order to insert the module into the kernel.
 
 After Install
 =============
